@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* navbar geral */
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* logo dentro da navbar */
+#logo {
+    width: 200px;
+    height: 60px;
+    padding: 10px;
+}
+
+/* Atalhos da navbar */
+.nav-itens {
+    display: flex;
+    list-style: none;
+}
+
+/* itens específicos da navbar */
+.nav-itens2 {
+    margin-right: 20px;
+    padding: 20px;
+}
+
+#login{
+    color: #af3f00;
+}
+
+/* slogan da LIAN */
+h1 {
+    text-align: center;
+}
+
+/* Descrição da LIAN */
+#descricao{
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* Lugar onde a imagem irá aparecer */
+.quadrado {
+    background-color: gray;
+    width: 400px;
+    height: 250px;
+    border-radius: 20px;
+}
+
+/* Conteúdo principal do site */
+main {
+    padding-left: 35px;
+}
+
+/* Fileira com a seção de automóveis ou vendedores disponíveis */
+.quadrados{
+    display: flex;
+    justify-content: space-around;
+}
+
+.vendedoresClasse{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Títulos das seções */
+h2 {
+ margin-left: 35px;
+}
+
+/* Botão de comprar */
+.comprar {
+    background-color: #af3f00 ;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+/* Agrupamento de nome e preço para ficarem lado a lado */
+.nomePreco{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Título da seção dos vendedores */
+#vendedores {
+    text-align: center;
+}
+
+/* rodapé */
+.footer {
+    width: 100%;
+}
+
+/* Estilo base para os cards (carros, motos, vendedores) */
+.squares {
+    background-color: white;
+    border-radius: 20px;
+    padding: 16px;
+    max-width: 400px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+/* Efeito ao passar o mouse: salto + sombra maior */
+.squares:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.nav li {
+    color: #000000;
+    padding-bottom: 5px;
+    /* Espaço para o sublinhado */
+    position: relative;
+    /* Essencial para o sublinhado funcionar */
+    overflow: hidden;
+    /* Garante que o sublinhado não "vaze" */
+    transition: color 0.3s ease;
+}
+
+/* O sublinhado (Filho) - começa escondido */
+.nav li::after {
+    content: '';
+    /* Sempre necessário */
+    position: absolute;
+    /* Posição relativa ao 'a' */
+    bottom: 0;
+    /* Fica na parte de baixo */
+    left: 0;
+    /* Começa na esquerda */
+    width: 100%;
+    /* Ocupa toda a largura */
+    height: 2px;
+    /* Grossura da linha */
+    background-color: #bb0303;
+    /* Cor da linha (vermelho) */
+    /* A Mágica da Animação (começa com largura 0) */
+    transform: scaleX(0);
+    transform-origin: left;
+    /* Animação cresce da esquerda para a direita */
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav li:hover {
+    color: #bb0303;
+    /* Muda a cor do texto também */
+    cursor: pointer;
+}
+
+.nav li:hover::after {
+    transform: scaleX(1);
+    /* Faz a linha crescer para 100% */
+}
